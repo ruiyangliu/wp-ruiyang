@@ -1,4 +1,4 @@
-ruiyang
+Ruiyang's Portfolio and Blog
 =======
 
-ruiyang
+This was originally a rails site now ported over to Wordpress for convenience.
