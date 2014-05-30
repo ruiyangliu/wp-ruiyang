@@ -1,0 +1,140 @@
+/* line 8, ../sass/application.scss */
+body {
+  margin: 0;
+  background-color: #d4f5ce;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* line 14, ../sass/application.scss */
+ul {
+  list-style-type: none;
+}
+
+/* line 18, ../sass/application.scss */
+a {
+  text-decoration: none;
+}
+/* line 21, ../sass/application.scss */
+a img {
+  border: none;
+}
+
+/* line 26, ../sass/application.scss */
+#header {
+  background-color: #475539;
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 31, ../sass/application.scss */
+#header #site-banner {
+  width: 550px;
+  margin: 0 auto;
+  padding-top: 15px;
+  overflow: hidden;
+  color: #FFF;
+}
+/* line 38, ../sass/application.scss */
+#header #site-banner a, #header #site-banner a:visited {
+  color: #FFF;
+}
+/* line 42, ../sass/application.scss */
+#header #site-banner a:hover {
+  opacity: 0.85;
+}
+/* line 46, ../sass/application.scss */
+#header #site-banner #site-img-link {
+  float: left;
+}
+/* line 50, ../sass/application.scss */
+#header #site-banner h1 {
+  font-size: 40px;
+  margin: 0;
+  padding: 10px 0;
+  clear: right;
+  float: right;
+  letter-spacing: 13px;
+  margin-right: -13px;
+}
+/* line 60, ../sass/application.scss */
+#header #site-banner h2 {
+  font-size: 10px;
+  letter-spacing: 5px;
+  float: right;
+  margin-top: 26px;
+}
+/* line 69, ../sass/application.scss */
+#header #primary-navigation ul {
+  margin: 0;
+  height: 70px;
+  padding: 10px 0 0 0;
+  font-size: 0;
+  overflow: hidden;
+}
+/* line 76, ../sass/application.scss */
+#header #primary-navigation li {
+  cursor: pointer;
+  font-size: 15px;
+  border-right: solid #6A7C60;
+  border-width: 1px;
+  letter-spacing: 5px;
+  height: 100%;
+  width: 22%;
+  display: inline-block;
+  background-color: #5A6A51;
+  line-height: 70px;
+}
+/* line 88, ../sass/application.scss */
+#header #primary-navigation li a {
+  display: block;
+  color: white;
+}
+/* line 95, ../sass/application.scss */
+#header #primary-navigation .current_page_item {
+  background-color: #D4F5CE !important;
+}
+/* line 97, ../sass/application.scss */
+#header #primary-navigation .current_page_item a {
+  color: #5A6A51 !important;
+}
+
+/* line 104, ../sass/application.scss */
+#content {
+  padding: 30px 0 100px 0;
+  margin: 0 auto;
+  width: 88%;
+  clear: both;
+}
+
+/* line 111, ../sass/application.scss */
+#footer {
+  background-color: white;
+  height: 34px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+/* line 119, ../sass/application.scss */
+#footer .footer-text {
+  margin-left: 25px;
+  margin-top: 7px;
+  float: left;
+}
+/* line 125, ../sass/application.scss */
+#footer .social-icons {
+  float: right;
+}
+/* line 127, ../sass/application.scss */
+#footer .social-icons a:hover {
+  opacity: 0.75;
+}
+/* line 130, ../sass/application.scss */
+#footer .social-icons ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+/* line 135, ../sass/application.scss */
+#footer .social-icons li {
+  float: left;
+}

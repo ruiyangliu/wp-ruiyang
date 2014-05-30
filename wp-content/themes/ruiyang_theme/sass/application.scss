@@ -1,0 +1,139 @@
+@import "compass/css3";
+
+$white: #FFF;
+$header_color: #475539;
+$body_color: #D4F5CE;
+$default_font: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+body{
+  margin: 0;
+  background-color: $body_color;
+  font-family: $default_font;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+
+  img {
+    border: none;
+  }
+}
+
+#header {
+  background-color: $header_color;
+  text-align: center;
+  margin: 0 auto;
+
+  #site-banner{
+    width: 550px;
+    margin: 0 auto;
+    padding-top: 15px;
+    overflow: hidden;
+    color: #FFF;
+
+    a, a:visited{
+      color: #FFF;
+    }
+
+    a:hover {
+      opacity: 0.85;
+    }
+    
+    #site-img-link {
+      float: left;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 0;
+      padding: 10px 0;
+      clear: right;
+      float: right;
+      letter-spacing: 13px;
+      margin-right: -13px;
+    }
+
+    h2 {
+      font-size: 10px;
+      letter-spacing: 5px;
+      float: right;
+      margin-top: 26px;
+    }
+  }
+
+  #primary-navigation {
+    ul{
+      margin: 0;
+      height: 70px;
+      padding: 10px 0 0 0;
+      font-size: 0;
+      overflow: hidden;
+    }
+    li {
+      cursor: pointer;
+      font-size: 15px;
+      border-right: solid #6A7C60;
+      border-width: 1px;
+      letter-spacing: 5px;
+      height: 100%;
+      width: 22%;
+      display: inline-block;
+      background-color: #5A6A51;
+      line-height: 70px;
+
+      a {
+        display: block;
+        color: $white;
+      }
+
+    }
+
+    .current_page_item {
+      background-color: #D4F5CE !important;
+      a{
+        color: #5A6A51 !important;
+      }
+    }
+  }
+}
+
+#content {
+  padding: 30px 0 100px 0;
+  margin: 0 auto;
+  width: 88%;
+  clear: both;
+}
+
+#footer {
+  background-color: $white;
+  height: 34px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  .footer-text{
+    margin-left: 25px;
+    margin-top: 7px;
+    float: left;
+  }
+
+  .social-icons{
+    float: right;
+    a:hover {
+      opacity: 0.75;
+    }
+    ul {
+      float: right;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      float: left;
+    }
+  }
+}
