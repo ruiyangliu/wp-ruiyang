@@ -5,6 +5,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Richard Ruiyang Liu</title>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>" />
     <link rel="stylesheet" href="<?php print($template_url.'/stylesheets/application.css') ?>" />
