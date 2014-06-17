@@ -1,9 +1,26 @@
-@import "compass/css3";
+@import "susy";
+@import "breakpoint";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+@include layout(24);
 
 $white: #FFF;
 $header_color: #475539;
 $body_color: #D4F5CE;
 $default_font: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+$page-width: 88%;
+
+$smallest_bp: 320px;
+$second_bp: 650px;
+
 
 body{
   margin: 0;
@@ -23,16 +40,18 @@ a {
   }
 }
 
+p {
+  color: $header_color;
+}
+
 #header {
   background-color: $header_color;
   text-align: center;
-  margin: 0 auto;
+  .page-item-11{
+    border-right: none;
+  }
 
   #site-banner{
-    width: 550px;
-    margin: 0 auto;
-    padding-top: 15px;
-    overflow: hidden;
     color: #FFF;
 
     a, a:visited{
@@ -42,60 +61,141 @@ a {
     a:hover {
       opacity: 0.85;
     }
-    
-    #site-img-link {
-      float: left;
-    }
 
-    h1 {
-      font-size: 40px;
-      margin: 0;
-      padding: 10px 0;
-      clear: right;
-      float: right;
-      letter-spacing: 13px;
-      margin-right: -13px;
+    #site-img-link{
+      img {
+        margin: 42px 0 25px 0;
+        width: 75px;
+      }
     }
 
     h2 {
-      font-size: 10px;
-      letter-spacing: 5px;
-      float: right;
+      font-size: 7px;
+      letter-spacing: 4px;
       margin-top: 26px;
     }
+
+    h1 {
+      margin: 0;
+      padding: 10px 0;
+      font-size: 22px;
+      letter-spacing: 6px;
+    }
+
   }
 
-  #primary-navigation {
-    ul{
-      margin: 0;
-      height: 70px;
-      padding: 10px 0 0 0;
-      font-size: 0;
-      overflow: hidden;
+  #primary-navigation{
+    ul {
+      padding: 0;
+      margin-bottom: 0;
     }
+
     li {
-      cursor: pointer;
-      font-size: 15px;
-      border-right: solid #6A7C60;
-      border-width: 1px;
-      letter-spacing: 5px;
-      height: 100%;
-      width: 22%;
-      display: inline-block;
+      padding: 10px 0;
       background-color: #5A6A51;
-      line-height: 70px;
+      border-top: 1px solid $body_color;
 
       a {
         display: block;
         color: $white;
+        text-transform: lowercase;
+        font-size: 11px;
+        letter-spacing: 5px;
       }
-
     }
 
-    .current_page_item {
-      background-color: #D4F5CE !important;
-      a{
-        color: #5A6A51 !important;
+  }
+
+  @include breakpoint($smallest_bp){
+    #site-banner{
+      h2 {
+        font-size: 10px;
+        letter-spacing: 5px;
+        margin-top: 26px;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 10px 0;
+        font-size: 30px;
+        letter-spacing: 10px;
+      }
+    }
+
+
+      ul{
+        margin: 0;
+        height: 70px;
+        font-size: 0;
+        overflow: hidden;
+
+        li {
+          @include span(6);
+          cursor: pointer;
+          padding: 0 !important;
+          border-right: solid #6A7C60;
+          border-top: none !important;
+          border-width: 1px;
+          height: 100%;
+          display: inline-block;
+          background-color: #5A6A51;
+          line-height: 70px;
+
+          a {
+            display: block;
+            color: $white;
+            font-size: 11px!important;
+            letter-spacing: 3px !important;
+          }
+
+        }
+      }
+
+      .current_page_item {
+        background-color: #D4F5CE !important;
+        a{
+          color: #5A6A51 !important;
+        }
+      }
+
+  }
+
+  @include breakpoint($second_bp) {
+
+    margin: 0 auto;
+
+    #site-banner{
+      width: 550px;
+      margin: 0 auto;
+      padding-top: 15px;
+      overflow: hidden;
+
+      #site-img-link {
+        float: left;
+      }
+
+      h1 {
+        font-size: 40px;
+        clear: right;
+        float: right;
+        letter-spacing: 13px;
+        margin-right: -13px;
+      }
+
+      h2 {
+        font-size: 10px;
+        letter-spacing: 5px;
+        float: right;
+      }
+    }
+
+    #primary-navigation {
+      ul{
+        @include container($page_width);
+        margin: auto;
+        li{
+
+        }
       }
     }
   }
@@ -104,36 +204,210 @@ a {
 #content {
   padding: 30px 0 100px 0;
   margin: 0 auto;
-  width: 88%;
+  width: $page_width;
+  overflow: hidden;
   clear: both;
+  a {
+    color: #000; 
+  }
+
+  #blog{
+    text-align: center;
+
+    .post-title{
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 0;
+    }
+
+    .post-meta{
+      margin-top: 3px;
+      font-size: 11px !important;
+    }
+
+    .post-item{
+      border-bottom: 1px solid #ccc;
+      border-width: 50%;
+      padding-bottom: 25px;
+      p {
+        font-size: 13px;
+      }
+      .read-more-link{
+        font-size: 11px;
+      }
+    }
+  }
+
+  #sidebar{
+    text-align: center;
+    .widget{
+      border-bottom: 1px solid #ccc;
+      ul{
+        padding-left: 0;
+        li{
+          font-size: 12px;
+        }
+      }
+    }
+
+    h2{
+      margin: 5px 0;
+      color: $header_color;
+      font-size: 12px;
+      text-transform: lowercase;
+      letter-spacing: 5px;
+    }
+
+    .search-form{
+      width: 60%;
+      margin: 5px auto;
+      input{
+        width: 100%;
+      }
+    }
+  }
+
+  @include breakpoint($second_bp) {
+    #blog {
+      text-align: left;
+      @include span(18);
+      .read-more-link{
+        float: right;
+        margin-bottom: 4px;
+      }
+    }
+    #sidebar{
+      @include span(6 at 18);
+
+      text-align: left;
+
+      .widget{
+        margin-left: 25px;
+        ul{
+          padding-left: 10px;
+        }
+        .search-form{
+          width: 80%;
+        }
+      }
+    }
+  }
 }
 
 #footer {
-  background-color: $white;
-  height: 34px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-
   .footer-text{
-    margin-left: 25px;
-    margin-top: 7px;
-    float: left;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 12px;
+  }
+
+  .tweet-content, .tweet-screen-name{
+    color: #A3F194;
+    a {
+      color: #6DBB41;
+    }
+  }
+
+  .tweetfeed{
+    padding: 0;
+    text-align: center;
+    margin: 2px 0;
+
+    .intent-meta, .tweet-username, .tweet-twittar, .tweet-timestamp{
+      display: none;
+
+    }
   }
 
   .social-icons{
-    float: right;
-    a:hover {
-      opacity: 0.75;
-    }
-    ul {
-      float: right;
+    background-color: #FFF;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    ul{
       margin: 0;
-      padding: 0;
-    }
-    li {
-      float: left;
+      padding: 5px 0 1px 0;
+      float: right;
+
+      li{
+        float: left;
+      }
+
     }
   }
+
+  @include breakpoint($second_bp){
+  
+    background-color: $white;
+    height: 34px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    .footer-text{
+      margin-left: 25px;
+      margin-top: 7px;
+      float: left;
+      background-color: $white;
+      width: 66%;
+      font-size: 15px;
+    }
+
+    .social-icons{
+      float: right;
+      position: static;
+      a:hover {
+        opacity: 0.75;
+      }
+      ul {
+        float: right;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        float: left;
+      }
+    }
+
+    .tweetfeed{
+      a {
+        color: #475539;
+      }
+
+      a:hover {
+        color: #5A6A51;
+      }
+
+      .tweet-twittar {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+        float: left;
+        display: block;
+      }
+      .tweet-screen-name{
+        float: left;
+        margin-right: 10px;
+        color: #000;
+      }
+      .tweet-content{
+        float: left;
+        margin-right: 10px;
+        color: #000;
+      }
+      .tweet-timestamp{
+        float: left;
+        display: block;
+      }
+      .intent-meta{
+        display: none;
+      }
+  }
+
+  }
+
 }

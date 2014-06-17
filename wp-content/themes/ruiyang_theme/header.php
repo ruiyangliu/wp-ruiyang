@@ -17,7 +17,7 @@
 
     <div id="header" class="header-bg">
       <div id="site-banner">
-        <a id="site-img-link" href="/"><img src="<?php print($template_url.'/images/site-logo.png') ?>"></img></a>
+        <a id="site-img-link" href="/"><img src="<?php print($template_url.'/images/site-logo.png') ?>" alt="RL" /></a>
         <h2 id="name-title" class="header-text"><?php echo get_bloginfo('description'); ?></h2>
         <h1 id="site-name" class="header-text"><a href="/"><?php echo get_bloginfo('name'); ?></a></h1>
       </div>
