@@ -133,9 +133,8 @@ p {
           @include span(6);
           cursor: pointer;
           padding: 0 !important;
-          border-right: solid #6A7C60;
+          border-right: 1px solid #6A7C60;
           border-top: none !important;
-          border-width: 1px;
           height: 100%;
           display: inline-block;
           background-color: #5A6A51;
@@ -227,7 +226,6 @@ p {
 
     .post-item{
       border-bottom: 1px solid #ccc;
-      border-width: 50%;
       padding-bottom: 25px;
       p {
         font-size: 13px;
@@ -311,7 +309,8 @@ p {
   }
 
   .tweetfeed{
-    padding: 0;
+    padding: 0 0 5px 0;
+    border-bottom: 1px dashed #434343;
     text-align: center;
     margin: 2px 0;
 
@@ -374,6 +373,7 @@ p {
     }
 
     .tweetfeed{
+      border-bottom: none;
       a {
         color: #475539;
       }
